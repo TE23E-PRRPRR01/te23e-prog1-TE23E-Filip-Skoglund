@@ -2,8 +2,8 @@
 "workbench.colorTheme": "Default Dark Modern",
     "workbench.iconTheme": "vscode-great-icons",
     "workbench.colorCustomizations": {
-        "activityBar.background": "#3B1D61",
-        "titleBar.activeBackground": "#532888",
+        "activityBar.background": "#333333",
+        "titleBar.activeBackground": "#3c3c3c",
         "titleBar.activeForeground": "#FBF9FD"
         },
     "workbench.editorAssociations": {
@@ -32,6 +32,6 @@
     "csharp.suppressBuildAssetsNotification": true,
     "csharp.debug.console": "externalTerminal",
     "csharp.referencesCodeLens.enabled": false,
-    "redhat.telemetry.enabled": false
+    "redhat.telemetry.enabled": false,
     "sessionlogger.enabled": false,
 }
