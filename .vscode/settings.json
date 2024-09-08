@@ -31,7 +31,7 @@
     "git.autofetch": true,
     "csharp.suppressBuildAssetsNotification": true,
     "csharp.debug.console": "externalTerminal",
-    "csharp.referencesCodeLens.enabled": false,
     "redhat.telemetry.enabled": false,
     "sessionlogger.enabled": false,
+    "dotnet.codeLens.enableReferencesCodeLens": false,
 }
