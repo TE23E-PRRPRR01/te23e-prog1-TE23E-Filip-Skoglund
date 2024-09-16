@@ -17,6 +17,8 @@ Console.WriteLine("Då kör vi! :P");
 
 // Generera ett random nummer
 int tal = Random.Shared.Next(min, max + 1);
+
+// Definerar variabler
 int gissning = 0;
 int gissningar = 0;
 
@@ -27,26 +29,31 @@ while (true)
     Console.Clear();
 
     Console.Write($"Gissa ett tal mellan {min} och {max}: ");
-    string input = Console.ReadLine();
-
-    bool parseLyckat = int.TryParse(input, out gissning); // Försöker konvertera inputen till ett heltal, därför tryParse och inte parse.
-    gissningar++; // Antalet gissningar +1 (++ ökar med 1)
+    bool parseLyckat = int.TryParse(Console.ReadLine(), out gissning);
+    gissningar++; // Räknar antalet gissningar (+1 per gissning)
 
     if (!parseLyckat)
     {
         Console.WriteLine("Du måste skriva ett nummer! ;/");
     }
+    else if (gissning == tal)
+    {
+        Console.WriteLine($"Grattis! Du gissade rätt på totalt {gissningar}st gissningar! :D");
+        break;
+    }
     else if (gissning < tal)
     {
-        Console.WriteLine("För lågt! Försök igen. :/");
+        Console.WriteLine("Ajdå, De blev för lågt därå! :/ \nVill du gissa igen? (y/n)");
     }
     else if (gissning > tal)
     {
-        Console.WriteLine("För högt! Försök igen. :/");
+        Console.WriteLine("Ajdå, De blev för högt därå! :/ \nVill du gissa igen? (y/n)");
     }
-    else
+    if (Console.ReadLine() == "n")
     {
-        Console.WriteLine($"Grattis! Du gissade rätt på totalt {gissningar}st gissningar! :D");
+        Console.WriteLine($"Du gjorde totalt {gissingar}st gissningar! Bra jobbat. \nDra åt helvete! >:(");
+        Thread.Sleep(1500);
+        Console.Clear();
         break;
     }
 }
