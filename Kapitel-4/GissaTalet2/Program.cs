@@ -51,7 +51,7 @@ while (true)
     }
     if (Console.ReadLine() == "n")
     {
-        Console.WriteLine($"Du gjorde totalt {gissingar}st gissningar! Bra jobbat. \nDra åt helvete! >:(");
+        Console.WriteLine($"Du gjorde totalt {gissningar}st gissningar! Bra jobbat. \nDra åt helvete! >:(");
         Thread.Sleep(1500);
         Console.Clear();
         break;
