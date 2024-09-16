@@ -38,15 +38,3 @@ while (gissning != tal)
         Console.WriteLine($"Grattis! Du gissade rätt på totalt {gissningar}st gissningar! :D");
     }
 }
-
-
-/* [ OLD CODE ]
-if (gissning == tal)
-{
-    Console.WriteLine("Grattis! Du gissade rätt! :D");
-}
-else
-{
-    Console.WriteLine($"Tyvärr, du gissade fel. Rätt tal var {tal}. :/");
-}
-*/
