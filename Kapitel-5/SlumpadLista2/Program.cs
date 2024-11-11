@@ -1,8 +1,8 @@
-﻿// Slumpa tal och spara i lista, version 2 
-// Här har vi fixat validation av användarens inmatning m.m..
+﻿// Skapa lista med slumpade tal
+// Validera användarens inmatning
 Console.Clear();
 
-// Deklarerar globala variabler
+// Globala variablar
 List<int> slumpadeTal = [];
 
 // Startsekvens
@@ -11,56 +11,51 @@ Console.WriteLine("Ett proram för att slumpa flera tal och sedan spara dem i li
 Console.WriteLine("===========================================");
 Console.ReadKey();
 
-// Programloop
-while (true)
+//Skapa en tom lista för att spara dess slumpade tal
+List<int> listaSlumptal = [];
+
+//Fråga igen tills användaren matar in ett giltigt svar
+int antal = LäsInHeltal("Hur många tal vill du slumpa?");
+
+Console.WriteLine($"Du vill ha {antal} slumptal!");
+
+//Användaren matar in min-värde
+int min = LäsInHeltal("Ange minsta värde för intervallet");
+Console.WriteLine($"\nDitt minvärde är {min}");
+
+//Användaren matar in max-värde
+int max = LäsInHeltal("Ange högsta värde för intervallet");
+Console.WriteLine($"\nDitt maxvärde är {max}");
+
+//Slumpa fram tal
+for (int i = 0; i < antal; i++)
 {
-    // Fråga hur många tal användaren vill slumpa
-    Console.Clear();
-    Console.Write("Hur många tal vill du slumpa: ");
-    string antalNummer = Console.ReadLine();
-    Console.Clear();
+    int slumptal = Random.Shared.Next(min, max + 1);
+    Console.WriteLine($"DITT SLUMPTAL ÄR {slumptal}");
 
-    // Kollar om användaren skrev in ett giltigt tal eller inte
-    if (!int.TryParse(antalNummer, out int antal) || antal < 1)
-    {
-        Console.WriteLine("\nOgiltigt val");
-    }
-    else
-    {
-        // Vilket intervall vill användarne slumpa emellan
-        Console.WriteLine("Vilket intervall vill du slumpa emellan?");
-        Console.Write("Minsta värde: ");
-        string minTal = Console.ReadLine();
-        Console.Write("Högsta värde: ");
-        string maxTal = Console.ReadLine();
+}
 
-        // Kollar om användaren skrev in ett giltigt tal eller inte
-        if (!int.TryParse(minTal, out int min) || !int.TryParse(maxTal, out int max) || min > max)
+
+/* ******************************************************** 
+**                   Mina egna metoder                    **
+******************************************************** */
+
+static int LäsInHeltal(string meddelande)
+{
+    int heltal = 0;
+    while (true)
+    {
+
+        Console.WriteLine($"{meddelande}");
+        bool lyckades = int.TryParse(Console.ReadLine(), out heltal);
+        if (lyckades)
         {
-            Console.WriteLine("Ogiltigt val");
+            break;
         }
         else
         {
-            // Slumpa antal tal, i rätt interval och spara i den globala listan
-            for (int i = 0; i < antal; i++)
-            {
-                slumpadeTal.Add(Random.Shared.Next(min, max + 1));
-            }
-
-            // Skriv ut listan
-            Console.Clear();
-            Console.WriteLine("Här är dina slumpade tal:");
-            foreach (var tal in slumpadeTal)
-            {
-                Console.WriteLine(tal);
-            }
+            Console.WriteLine("Ange ett giltigt tal");
         }
     }
-    // Fråga användaren om programmet skall avslutas eller fortsätta
-    Console.WriteLine("Tryck på valfri knapp för att försöka igen eller [ESC] för att avsluta programmet");
-    Console.ReadKey();
-    if (Console.ReadKey().Key == ConsoleKey.Escape) // Om användaren trycker på ESC så avslutas programmet
-    {
-        break;
-    }
+    return heltal;
 }
