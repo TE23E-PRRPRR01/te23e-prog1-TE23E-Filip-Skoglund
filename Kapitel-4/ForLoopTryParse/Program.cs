@@ -60,7 +60,7 @@ while (true)
         Adderat med 2: {tal + 2}
         Subtraherat med 2: {tal - 2}
         Kvadraten på talet: {tal * tal}
-        Talet^3: {tal * tal * tal}
+        Talet^3: {Math.Pow(tal, 3)}
         """);
         break;
         }
