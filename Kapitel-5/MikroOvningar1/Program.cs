@@ -1,16 +1,20 @@
 ﻿// Mikroövning: Listor
 Console.Clear();
 
-
 List<string> namnLista = [];
-
 
 while (true)
 {
-    Console.WriteLine("\nVad vill du göra? (1-3)");
-    WriteLineColored("1. Lägga till namn i registret \n2. Ta bort namn från registret \n3. Söka efter namn i registret", ConsoleColor.Gray);
+    WriteLineColored("\nVad vill du göra? (1-3)", ConsoleColor.White);
+    WriteLineColored("1. Lägga till namn i registret \n2. Ta bort namn från registret \n3. Söka efter namn i registret \n4. Visa lista \n5. Avsluta programmet", ConsoleColor.DarkGray);
+    Console.WriteLine("");
 
     string val = Console.ReadLine();
+    if (val == "5")
+    {
+        WriteLineColored("Programmet avslutas", ConsoleColor.Red);
+        break;
+    }
 
     while (true)
     {
@@ -57,9 +61,15 @@ while (true)
                 }
             }
         }
+        else if (val == "4")
+        {
+            Console.WriteLine($"Alla namn: {string.Join("\n", namnLista)}");
+            break;
+        }
         else
         {
             WriteLineColored("Felaktig inmatning, var god försök igen", ConsoleColor.Red);
+            break;
         }
     }
 }
@@ -72,4 +82,3 @@ static void WriteLineColored(string message, ConsoleColor color)
     Console.WriteLine(message);
     Console.ForegroundColor = ConsoleColor.White;
 }
-
