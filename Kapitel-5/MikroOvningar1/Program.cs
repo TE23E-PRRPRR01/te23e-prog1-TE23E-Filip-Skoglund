@@ -68,7 +68,7 @@ while (true)
         }
         else
         {
-            WriteLineColored("Felaktig inmatning, var god försök igen", ConsoleColor.Red);
+            WriteLineColored("Felaktig inmatning, var god försök igen.", ConsoleColor.Red);
             break;
         }
     }
