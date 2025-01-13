@@ -13,7 +13,10 @@ Console.Clear();
 // UpprepaText("Upprepat!", 4);
 
 /* Konverterar celius till fahrenheit*/
-CeliusFahrenheit(20);
+// CeliusFahrenheit(37);
+
+/* Skriva ut ett random tal ett visst antal gånger */
+RollDice(10);
 
 
 /* **************************************************
@@ -72,4 +75,17 @@ static void UpprepaText(string message, int times)
 static void CeliusFahrenheit(int celius)
 {
     Console.WriteLine($"{celius}°C i fahrenheit är {celius * 9/5 + 32}");
+}
+
+
+/// <summary>
+/// Skriva ut ett random tal ett visst antal gånger
+/// </summary>
+/// <param name="times"></param>
+static void RollDice(int times)
+{
+    for (var i = 0; i < times; i++)
+    {
+        Console.WriteLine(new Random().Next(1, 7));
+    }
 }
