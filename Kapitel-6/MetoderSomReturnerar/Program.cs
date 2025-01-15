@@ -10,13 +10,36 @@ Console.WriteLine($"\"Elias Afentoulidis\" baklänges är \"{VändText("Elias Af
 Console.WriteLine($"{Multiplicera(5, 5.325):F2}");
 Console.WriteLine($"{Dividera(5, 2):F2}");
 
-Console.WriteLine(${Längst("Hej på dig", "Hej på dig skitunge!")});
+Console.WriteLine($"{Längst("Hej på dig", "Hej på dig skitunge!")}");
 
 Console.WriteLine($"{AntalISträng('a', "Hej på dig din lilla skitunge!")}");
+
+/* Läsa in ett heltal och returnera det */
+Console.WriteLine("Skriv in ett heltal:" );
+int heltal = LäsInHeltal();
+Console.WriteLine($"Du skrev in talet {heltal}");
 
 /* **************************************************
 *                    M E T H O D S  
 *************************************************** */
+
+/// <summary>
+/// Metod som läser in ett heltal och returnerar det, så att programmet inte crashas
+/// </summary>
+/// <returns></returns>
+static int LäsInHeltal()
+{
+    if (int.TryParse(Console.ReadLine(), out int tal))
+    {
+        return tal;
+    }
+    else
+    {
+        Console.WriteLine("Du måste skriva in ett giltigt heltal. Försök igen: ");
+        return LäsInHeltal();
+    }
+}
+
 
 /// <summary>
 /// Metod som räknar antalet förekomster av ett specifierat tecken i en sträng.
