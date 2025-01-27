@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CeasarKrypto", "CeasarKrypto.csproj", "{B153DCEF-F66F-E6B0-30C2-464A5B35617A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B153DCEF-F66F-E6B0-30C2-464A5B35617A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B153DCEF-F66F-E6B0-30C2-464A5B35617A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B153DCEF-F66F-E6B0-30C2-464A5B35617A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B153DCEF-F66F-E6B0-30C2-464A5B35617A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B61F657E-23E1-4C20-970B-C342D3666D32}
+	EndGlobalSection
+EndGlobal
